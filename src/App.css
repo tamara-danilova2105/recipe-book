@@ -9,21 +9,6 @@
   opacity: 0.9;
 }
 
-video {
-  width: 55%;
-  border-radius: 50px;
-}
-
-.container-video {
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 50px;
-  background-color: rgba(227, 232, 236, 0.493);
-  font-family: 'Poppins', sans-serif;
-  padding: 30px;
-}
-
-
 .container {
   display: flex;
   justify-content: center;
@@ -74,7 +59,7 @@ ul {
 
 .ricepies {
   width: 350px;
-  background-color: rgba(186, 188, 189, 0.589);
+  background-color: rgba(186, 188, 189, 0.637);
   border-radius: 20px;
   margin-top: 40px;
 }

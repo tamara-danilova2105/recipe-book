@@ -1,6 +1,5 @@
 import './App.css';
 import { useEffect, useState } from 'react'
-import video from './food.mp4'
 import icon from './751463.png'
 import RecipiesComponent from './RecipiesComponent';
 
@@ -11,7 +10,7 @@ function App() {
 
   const [mySearch, setMySearch] = useState('')
   const [myRecipies, setMyRecipies] = useState([])
-  const [wordSubmitted, serWordSubmitted] = useState('')
+  const [wordSubmitted, serWordSubmitted] = useState('avocado salmon')
 
   useEffect( () => {
     async function fetchData() {
@@ -56,13 +55,6 @@ function App() {
           ingredients={item.recipe.ingredientLines}
           />
         ))}
-      </div>
-
-      <div className="container-video">
-        <video autoPlay muted loop>
-          <source src={video} type="video/mp4" />
-        </video>
-        <h2>Bon appetit!</h2>
       </div>
     </div>
   );
