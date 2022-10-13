@@ -37,22 +37,22 @@ function App() {
         <h1>Find a Recipe</h1>
       </div>
 
-      <div className="container">
-        <form onSubmit={finalSearch}>
+        <form className="container" onSubmit={finalSearch}>
           <input className='search' placeholder='ingredient...' onChange={RecipeSearch} value={mySearch}></input>
-        </form>
           <button onClick={finalSearch}>
             <img src={icon} width='35px' alt='button search' />
           </button>
-      </div>
+        </form>
 
       <div className='container-recipies'>
         {myRecipies.map((item, index) => (
-          <RecipiesComponent key={index}
-          label={item.recipe.label} 
-          image={item.recipe.image} 
-          calories={item.recipe.calories}
-          ingredients={item.recipe.ingredientLines}
+          <RecipiesComponent 
+            key={index}
+            label={item.recipe.label} 
+            image={item.recipe.image} 
+            calories={item.recipe.calories}
+            ingredients={item.recipe.ingredientLines}
+            totalDaily={item.recipe.totalDaily}
           />
         ))}
       </div>

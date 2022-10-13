@@ -1,9 +1,10 @@
-function RecipiesComponent({label, image, calories, ingredients}) {
+function RecipiesComponent({label, image, calories, ingredients, totalDaily}) {
     return(
         <div className="ricepies">
             <div>
                 <h2>{label}</h2>
                 {/* <p>{calories.toFixed()}calories</p> */}
+                {/* <p>{totalDaily.PROCNT.quantity.toFixed()}</p> */}
                 <img src={image} alt='recipes'/>
             </div>
 
