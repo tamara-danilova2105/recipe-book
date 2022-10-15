@@ -37,9 +37,12 @@ function App() {
         <h1>Find a Recipe</h1>
       </div>
 
-        <form className="container" onSubmit={finalSearch}>
+        <form 
+          className="container" 
+          onSubmit={finalSearch}
+        >
           <input className='search' placeholder='ingredient...' onChange={RecipeSearch} value={mySearch}></input>
-          <button onClick={finalSearch}>
+          <button>
             <img src={icon} width='35px' alt='button search' />
           </button>
         </form>
