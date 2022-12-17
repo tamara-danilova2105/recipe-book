@@ -5,13 +5,13 @@ import RecipiesComponent from './RecipiesComponent';
 
 function App() {
 
-  const MY_ID = '5ff670c9'
-  const MY_KEY = '8c28f0555c9644bfae5598e5f086ee39'
+  const [mySearch, setMySearch] = useState('');
+  const [myRecipies, setMyRecipies] = useState([]);
+  const [wordSubmitted, serWordSubmitted] = useState('avocado salmon');
 
-  const [mySearch, setMySearch] = useState('')
-  const [myRecipies, setMyRecipies] = useState([])
-  const [wordSubmitted, serWordSubmitted] = useState('avocado salmon')
-
+  const MY_ID = process.env.REACT_APP_MY_ID
+  const MY_KEY = process.env.REACT_APP_MY_KEY
+  
   useEffect( () => {
     async function fetchData() {
       const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${wordSubmitted}&app_id=${MY_ID}&app_key=${MY_KEY}`)
@@ -19,7 +19,7 @@ function App() {
       setMyRecipies(data.hits)
     }
     fetchData()
-  },[wordSubmitted])
+  },[wordSubmitted, MY_ID, MY_KEY])
 
   const RecipeSearch = (e) => {
     setMySearch(e.target.value)
